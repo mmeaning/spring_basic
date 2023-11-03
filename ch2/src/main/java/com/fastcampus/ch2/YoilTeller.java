@@ -1,8 +1,11 @@
 package com.fastcampus.ch2;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Calendar;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class YoilTeller {
 	// public static void main(String[] args) {
 	@RequestMapping("/getYoil")
-	public void main(HttpServletRequest request) { //http://localhost:8090/ch2/getYoil?year=2021&month=10&day=1
+	public void main(HttpServletRequest request, HttpServletResponse response) throws IOException { //http://localhost:8090/ch2/getYoil?year=2021&month=10&day=1
 		// 1. 입력
 		String year = request.getParameter("year");
 		String month = request.getParameter("month");
@@ -30,8 +33,11 @@ public class YoilTeller {
 		char yoil = " 일월화수목금토".charAt(dayOfWeek);
 
 		// 3. 출력
-		System.out.println(year + "년 " + month + "월 " + day + "일은 ");
-		System.out.println(yoil + "요일입니다.");
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
+		PrintWriter out = response.getWriter(); //response객체에서 브라우저로의 출력 스트림을 얻는다.
+		out.println(year + "년 " + month + "월 " + day + "일은 ");
+		out.println(yoil + "요일입니다.");
 	}
 
 }
