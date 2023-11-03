@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed Nov 01 22:02:07 KST 2023
+org.eclipse.jst.jee.server\:ch2=C\:\\apache-tomcat-9.0.74\\wtpwebapps\\ch2
+org.eclipse.jst.jee.server\:firstSpring=C\:\\apache-tomcat-9.0.74\\wtpwebapps\\firstSpring
