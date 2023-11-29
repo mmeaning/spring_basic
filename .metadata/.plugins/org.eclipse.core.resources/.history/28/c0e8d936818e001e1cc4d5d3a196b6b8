@@ -1,0 +1,10 @@
+package com.fastcampus.ch2;
+
+@Controller
+@RequestMapping("/login")
+public class LoginController {
+	@RequestMapping("/login")
+	public String loginForm() {
+		return "loginForm";
+	}
+}
