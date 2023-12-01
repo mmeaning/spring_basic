@@ -1,0 +1,11 @@
+package com.fastcampus.ch2;
+
+@Controller
+@RequestMapping("/board")
+public class BoardController {
+	
+	@GetMapping("/list")
+	public String list() {
+		return "boardList";
+	}
+}
